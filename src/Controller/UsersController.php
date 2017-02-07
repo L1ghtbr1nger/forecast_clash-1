@@ -149,7 +149,8 @@ class UsersController extends AppController
     // Logout
     public function logout() {
         $this->Auth->logout();
-        return;
+        $this->request->session()->destroy();
+        $this->redirect(['controller' => 'pages', 'action' => 'home']);
     }
     
     // Registration
