@@ -18,7 +18,11 @@ $(document).ready(function(){
                 var temp = "";
                 if (what['result']) {
                     alert(what['msg']);
-                    window.location.href = "https://forecastclash.com/forecast_clash";
+                    if (what['regLog']) {
+                        window.location.href = "/forecast_clash/pages/home";
+                    } else {
+                        window.location.href = "/forecast_clash/users/login";
+                    }
                 } else {
                     if (what['regLog']) {
                         temp = what['msg'];
